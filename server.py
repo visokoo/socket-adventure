@@ -59,7 +59,8 @@ class Server(object):
         self.socket = socket.socket(
             socket.AF_INET,
             socket.SOCK_STREAM,
-            socket.IPPROTO_TCP)
+            socket.IPPROTO_TCP,
+            socket.SO_REUSEADDR)
 
         address = ('127.0.0.1', self.port)
         self.socket.bind(address)
